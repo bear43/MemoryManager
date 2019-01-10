@@ -13,7 +13,8 @@ DLL_EI char* setHook(DWORD hookAddress, DWORD destinationAddress)
 		jmp destinationAddress
 		E9 AA BB CC DD
 	*/
-	const char newByte[] = { 0xE9, destinationAddress >> 24, (destinationAddress >> 16) & 0xFF, (destinationAddress >> 8) & 0xFF, destinationAddress & 0xFF };
+	DWORD relativeJumpAddress = hookAddress - destinationAddress + 5;
+	const char newByte[] = { 0xE9, relativeJumpAddress >> 24, (relativeJumpAddress >> 16) & 0xFF, (relativeJumpAddress >> 8) & 0xFF, relativeJumpAddress & 0xFF };
 	patchBytes(hookAddress, newByte, 5);
 	return originalBytes;
 }

@@ -114,7 +114,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -150,11 +150,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Hooker\Hooker.c" />
-    <ClCompile Include="MemoryManager.cpp" />
+    <ClCompile Include="DllEntry.cpp" />
+    <ClCompile Include="Hook\Hook.cpp" />
     <ClCompile Include="Patcher\Patcher.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Hooker\Hooker.h" />
+    <ClInclude Include="Hook\Hook.h" />
     <ClInclude Include="Patcher\Patcher.h" />
   </ItemGroup>
   <ItemGroup>

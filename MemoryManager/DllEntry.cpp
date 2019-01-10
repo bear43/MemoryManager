@@ -1,7 +1,4 @@
-﻿// MemoryManager.cpp : Определяет экспортированные функции для приложения DLL.
-//
-
-#include <Windows.h>
+﻿#include <Windows.h>
 
 BOOL APIENTRY DllMain(HMODULE hModule,
 	DWORD  ul_reason_for_call,
